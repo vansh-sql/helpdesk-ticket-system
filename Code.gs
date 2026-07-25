@@ -11,7 +11,6 @@
 //    8. XSS protection (esc() helper)
 // ================================================================
 
-// ✅ SIRF YAHI EK LINE CHANGE HUI HAI — NAYA SHEET ID
 var SHEET_ID      = '1te1_-y6Q-ZVhTHto0fK3RbemBHgzJHO8ZPX8UylsAv4';
 var TICKETS_SHEET = 'Tickets';
 var ARCHIVE_SHEET = 'Tickets_Archive';
