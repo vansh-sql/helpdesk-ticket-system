@@ -10,17 +10,18 @@ This is an active project — I'm continuing to test edge cases, fix issues, and
 
 ## Screenshots
 
-> Add screenshots/GIFs here so anyone viewing the repo can see the system without running it.
+**Employee Dashboard**
+![User Dashboard](screenshots/user-dashboard.png)
 
-| Login / Dashboard | Ticket Raising Form |
-|---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Raise Ticket](screenshots/raise-ticket.png) |
+**Raising a Ticket**
+![Raise Ticket Form](screenshots/raise-ticket-form.png)
 
-| Admin Analytics View | Email Notification |
-|---|---|
-| ![Analytics](screenshots/analytics.png) | ![Email](screenshots/email-notification.png) |
+**Google Sheets as the Backend**
+![Google Sheets Mapping](screenshots/google-sheets-mapping.png)
 
-*(Replace the image paths above with your actual screenshot files once uploaded to a `/screenshots` folder in the repo.)*
+**Login Flow (Demo)**
+
+https://github.com/vansh-sql/helpdesk-ticket-system/blob/main/screenshots/login-demo.mp4
 
 ---
 
@@ -85,10 +86,14 @@ There is no traditional backend server or external database here — Google Shee
 ## Project Structure
 
 ```
-├── Code.gs              # Backend logic: auth, ticket creation, SLA calculation,
-│                         # sheet setup, server-side functions, HTML rendering
-├── EmailTemplate.html    # HTML template used for email notifications
-└── screenshots/          # App screenshots (add your own here)
+├── Code.gs                          # Backend logic: auth, ticket creation, SLA calculation,
+│                                     # sheet setup, server-side functions, HTML rendering
+├── EmailTemplate.html                # HTML template used for email notifications
+└── screenshots/
+    ├── user-dashboard.png
+    ├── raise-ticket-form.png
+    ├── google-sheets-mapping.png
+    └── login-demo.mp4
 ```
 
 The frontend HTML/CSS/JS is served directly through `Code.gs` using Apps Script's `HtmlService`, so the whole app runs from a single Apps Script project.
