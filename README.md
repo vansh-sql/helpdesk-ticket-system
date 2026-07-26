@@ -8,6 +8,18 @@ This is an active project — I'm continuing to test edge cases, fix issues, and
 
 ---
 
+## Live Demo
+
+🔗 [Try it here](https://script.google.com/macros/s/AKfycbyO4XpFs_w14XdM6XXJCWJWGRNWvUyqX7DC29MAlfUht1G-pZHRXLc7-tugiyNfsn91/exec)
+
+**Demo login:**
+- Employee Code: `Vansh-14`
+- Password: `1979@@`
+
+> This is a demo environment with test data only — feel free to explore all three roles.
+
+---
+
 ## Screenshots
 
 **Employee Dashboard**
