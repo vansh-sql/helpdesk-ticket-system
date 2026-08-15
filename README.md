@@ -1,10 +1,13 @@
 # Help Desk Ticket Management System
 
-A Help Desk / IT-HR support ticketing system built on **Google Apps Script** and **Google Sheets**, with no external database or paid backend.
+A Help Desk / IT-HR support ticketing system built using **Google Apps Script and Google Sheets**, with automated SLA tracking and email notifications — no external database or paid backend required.
 
-I built this after facing the problem firsthand at work — support requests were being tracked over WhatsApp and manual Excel sheets, with no clear visibility into ticket status, ownership, or response time. This project is my attempt to solve that with tools that any small team already has access to (a Google account).
+This project was **independently developed as a self-initiated personal project**, inspired by a ticket-management workflow I observed in my workplace. The existing process used Google Forms and Google Sheets for collecting and tracking support requests, which motivated me to explore how the workflow could be made more structured, automated, and professional.
 
-This is an active project — I'm continuing to test edge cases, fix issues, and add improvements over time.
+I independently designed and developed an enhanced version with features such as **role-based access, ticket management, SLA tracking, automated email notifications, status monitoring, and workflow automation**.
+
+The project is actively maintained as a practical learning and development project, with ongoing testing, improvements, and feature enhancements.
+
 
 ---
 
