@@ -1,17 +1,5 @@
-// ================================================================
-//  Vansh Tech Solutions HelpDesk v6 FINAL — Bug Free
-//  FEATURES:
-//    1. Employee login → Naam + Email + Department (validated)
-//    2. Dept passwords → IT, HR, Admin, DME alag alag
-//    3. Dept staff → sirf apne dept ke tickets dekhe + close kare
-//    4. IT → saari tickets dekhe
-//    5. Email notification → Resolved + Closed pe auto email
-//    6. Employee stats → Total, Open, InProgress, Resolved
-//    7. Search + Filter tickets
-//    8. XSS protection (esc() helper)
-// ================================================================
 
-var SHEET_ID      = '1te1_-y6Q-ZVhTHto0fK3RbemBHgzJHO8ZPX8UylsAv4';
+var SHEET_ID      = '1ped0P-yZ8XYMztXnMbA1jxosZVqKeiYvfmLHOlfQTus';
 var TICKETS_SHEET = 'Tickets';
 var ARCHIVE_SHEET = 'Tickets_Archive';
 var COUNTER_SHEET = 'Config';
@@ -21,7 +9,7 @@ var TICKET_HEADERS = [
 ];
 var ACTIVE_STATUSES = { 'Open': true, 'Seen': true, 'In Progress': true };
 var CLOSED_STATUSES = { 'Resolved': true, 'Closed': true };
-var APP_NAME = 'Vansh Tech Solutions';
+var APP_NAME = 'Vns Workspace';
 var MASTER_ADMIN_DEFAULT_PASSWORD = 'master@1234';
 var SESSION_TTL_SECONDS = 21600;
 var LOCK_RETRY_ATTEMPTS = 5;
@@ -882,7 +870,7 @@ function getHTML() {
   return '<!DOCTYPE html>\n<html>\n<head>\n' +
 '<meta charset="UTF-8">\n' +
 '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
-'<title>Vansh Tech Solutions</title>\n' +
+'<title>Vns Workspace</title>\n' +
 '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">\n' +
 '<style>\n' +
 ':root{--bg:#0a0f1c;--s1:#111827;--s2:#1f2937;--b1:rgba(255,255,255,0.16);--b2:rgba(255,255,255,0.28);--tx:#ffffff;--mu:#dbe7ff;--ac:#3b82f6;--ac2:#2563eb;--gn:#10b981;--am:#f59e0b;--rd:#ef4444;--pu:#8b5cf6}\n' +
@@ -1103,7 +1091,7 @@ function getHTML() {
 
 '<div class="lbrand">\n' +
 '<div class="llogo">VT</div>\n' +
-'<div><div class="lbname">Vansh Tech Solutions</div><div class="lbsub">HelpDesk</div></div>\n' +
+'<div><div class="lbname">Vns Workspace</div><div class="lbsub">HelpDesk</div></div>\n' +
 '</div>\n' +
 
 '<div class="tabs">\n' +
@@ -1117,9 +1105,9 @@ function getHTML() {
 
 /* Employee form */
 '<div id="form-emp">\n' +
-'<h2>Welcome 👋</h2><p class="sub">Apna Employee Code aur password daalo. Email automatic detect hoga.</p>\n' +
+'<h2>Welcome 👋</h2><p class="sub">Enter your employee code and password.</p>\n' +
 '<div class="fg"><label>Employee Code *</label>' +
-'<input type="text" id="e-code" placeholder="e.g. SSIFPL-1" onkeydown="if(event.key===\'Enter\')empLogin()">' +
+'<input type="text" id="e-code" placeholder="e.g.Vns-14" onkeydown="if(event.key===\'Enter\')empLogin()">' +
 '<div class="errmsg" id="err-code">Code bharo</div></div>\n' +
 '<div class="fg"><label>Password *</label>' +
 '<input type="password" id="e-pass" placeholder="••••••••" onkeydown="if(event.key===\'Enter\')empLogin()">' +
@@ -1176,7 +1164,7 @@ function getHTML() {
 '<div class="sb">\n' +
 '<div class="sb-brand">\n' +
 '<div class="sb-logo">VT</div>\n' +
-'<div><div class="sb-bname">Vansh Tech Solutions</div><div class="sb-bsub">HelpDesk</div></div>\n' +
+'<div><div class="sb-bname">Vns Workspace</div><div class="sb-bsub">HelpDesk</div></div>\n' +
 '</div>\n' +
 '<nav class="sb-nav" id="sb-nav"></nav>\n' +
 '<div class="sb-user">\n' +
@@ -1222,8 +1210,8 @@ function getHTML() {
 
 /* ── Employee Dashboard ── */
 '<div class="vp" id="vp-emp">\n' +
-'<div class="wc"><h2 id="wc-nm">Namaste! 👋</h2><p>Koi problem? Naya ticket daalo — IT jaldi solve karega.</p>\n' +
-'<button class="wc-btn" onclick="sv(\'new-ticket\')">+ Naya Ticket Daalo</button></div>\n' +
+'<div class="wc"><h2 id="wc-nm">Namaste! 👋</h2><p>Koi problem? Rays Tickets. — Team jaldi  he solve karega.</p>\n' +
+'<button class="wc-btn" onclick="sv(\'new-ticket\')">+ Rays Tickets.</button></div>\n' +
 '<div class="stats-grid" style="grid-template-columns:repeat(4,1fr)">\n' +
 '<div class="stat-card"><div class="stat-label">Total</div><div class="stat-val c-text" id="e-tt">0</div></div>\n' +
 '<div class="stat-card"><div class="stat-label">Open</div><div class="stat-val c-blue" id="e-op">0</div></div>\n' +
@@ -1248,7 +1236,7 @@ function getHTML() {
 '<div class="fc">\n' +
 '<div class="sect-title">Add New Employee</div>\n' +
 '<div class="g2">\n' +
-'<div class="fg"><label>Employee Code *</label><input type="text" id="a-code" placeholder="e.g. SSIFPL-100"></div>\n' +
+'<div class="fg"><label>Employee Code *</label><input type="text" id="a-code" placeholder="e.g. Vanh-14"></div>\n' +
 '<div class="fg"><label>Name *</label><input type="text" id="a-name" placeholder="Employee name"></div>\n' +
 '<div class="fg"><label>Designation *</label><input type="text" id="a-desig" placeholder="e.g. HR"></div>\n' +
 '<div class="fg"><label>Password *</label><input type="text" id="a-pass" placeholder="Login password"></div>\n' +
@@ -1386,7 +1374,7 @@ function getHTML() {
 '}\n' +
 'initSky();\n' +
 'var empSub = document.querySelector("#form-emp .sub");\n' +
-'if (empSub) empSub.textContent = "Apna Employee Code aur password daalo. Email automatic detect hoga.";\n' +
+'if (empSub) empSub.textContent = "Enter your employee code and password.";\n' +
 'var empBtn = document.getElementById("e-btn");\n' +
 'if (empBtn) empBtn.textContent = "Login →";\n' +
 'var empForm = document.getElementById("form-emp");\n' +
@@ -1594,7 +1582,7 @@ function getHTML() {
 '  document.querySelectorAll(".ni").forEach(function(el) { el.classList.remove("on"); });\n' +
 '  var el = document.getElementById("vp-" + v);\n' +
 '  if (el) el.classList.add("on");\n' +
-'  var titles = { it: "Tickets Dashboard", emp: "Mera Dashboard", master: "Super Admin", "new-ticket": "Naya Ticket", detail: "Ticket Detail" };\n' +
+'  var titles = { it: "Tickets Dashboard", emp: "Mera Dashboard", master: "Super Admin", "new-ticket": "New Ticket Ticket", detail: "Ticket Detail" };\n' +
 '  document.getElementById("pg-ttl").textContent = titles[v] || "";\n' +
 '  document.querySelectorAll(".ni").forEach(function(ni) {\n' +
 '    if (ni.getAttribute("data-view") === v) ni.classList.add("on");\n' +
@@ -1761,7 +1749,7 @@ function getHTML() {
 '  if (!mine.length) {\n' +
 '    var tr = document.createElement("tr");\n' +
 '    var td = document.createElement("td");\n' +
-'    td.colSpan = 5; td.className = "empty"; td.textContent = "Abhi koi ticket nahi — Naya ticket daalo! 🎫";\n' +
+'    td.colSpan = 5; td.className = "empty"; td.textContent = "Abhi koi ticket nahi — Rays Tickets.! 🎫";\n' +
 '    tr.appendChild(td); tbody.appendChild(tr); return;\n' +
 '  }\n' +
 '  mine.slice().sort(function(a,b){ return b.id.localeCompare(a.id); }).forEach(function(t) {\n' +
