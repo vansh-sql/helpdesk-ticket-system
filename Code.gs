@@ -1,4 +1,7 @@
 
+// ================================================================
+
+// ✅ SIRF YAHI EK LINE CHANGE HUI HAI — NAYA SHEET ID
 var SHEET_ID      = '1ped0P-yZ8XYMztXnMbA1jxosZVqKeiYvfmLHOlfQTus';
 var TICKETS_SHEET = 'Tickets';
 var ARCHIVE_SHEET = 'Tickets_Archive';
@@ -522,7 +525,7 @@ function serverAdminAddEmployee(masterPass, emp) {
       var cleanCode = cleanText_(code);
       for (var i = 1; i < data.length; i++) {
         if (cleanText_(data[i][0]) === cleanCode) {
-          return { ok: false, msg: 'Ye Employee Code pehle se master record mein hai.' };
+          return { ok: false, msg: 'This employee code already exists in the master record.' };
         }
       }
 
@@ -1090,7 +1093,7 @@ function getHTML() {
 '<div class="lbox">\n' +
 
 '<div class="lbrand">\n' +
-'<div class="llogo">VT</div>\n' +
+'<div class="llogo">VNS</div>\n' +
 '<div><div class="lbname">Vns Workspace</div><div class="lbsub">HelpDesk</div></div>\n' +
 '</div>\n' +
 
@@ -1163,7 +1166,7 @@ function getHTML() {
 '<div class="pg" id="pg-app">\n' +
 '<div class="sb">\n' +
 '<div class="sb-brand">\n' +
-'<div class="sb-logo">VT</div>\n' +
+'<div class="sb-logo">VNS</div>\n' +
 '<div><div class="sb-bname">Vns Workspace</div><div class="sb-bsub">HelpDesk</div></div>\n' +
 '</div>\n' +
 '<nav class="sb-nav" id="sb-nav"></nav>\n' +
@@ -1192,7 +1195,7 @@ function getHTML() {
 '<div class="stat-card"><div class="stat-label">Open</div><div class="stat-val c-blue" id="i-op">0</div></div>\n' +
 '<div class="stat-card"><div class="stat-label">Seen/In Progress</div><div class="stat-val c-amber" id="i-pr">0</div></div>\n' +
 '<div class="stat-card"><div class="stat-label">Resolved/Closed</div><div class="stat-val c-green" id="i-rs">0</div></div>\n' +
-'<div class="stat-card"><div class="stat-label">Total</div><div class="stat-val c-text" id="i-tt">0</div></div>\n' +
+'<div class="stat-card"><div class="stat-label"> Total Tickets </div><div class="stat-val c-text" id="i-tt">0</div></div>\n' +
 '</div>\n' +
 '<div class="chart-row" style="display:flex;gap:16px;margin:16px 0;height:240px;display:none" id="it-charts">\n' +
 '<div class="fc" style="flex:1;display:flex;justify-content:center;position:relative"><canvas id="ch-dept"></canvas></div>\n' +
@@ -1210,7 +1213,7 @@ function getHTML() {
 
 /* ── Employee Dashboard ── */
 '<div class="vp" id="vp-emp">\n' +
-'<div class="wc"><h2 id="wc-nm">Namaste! 👋</h2><p>Koi problem? Rays Tickets. — Team jaldi  he solve karega.</p>\n' +
+'<div class="wc"><h2 id="wc-nm">Welcome back! 👋</h2><p>Need assistance? Raise a ticket, and our team will resolve it shortly.</p>\n' +
 '<button class="wc-btn" onclick="sv(\'new-ticket\')">+ Rays Tickets.</button></div>\n' +
 '<div class="stats-grid" style="grid-template-columns:repeat(4,1fr)">\n' +
 '<div class="stat-card"><div class="stat-label">Total</div><div class="stat-val c-text" id="e-tt">0</div></div>\n' +
@@ -1218,7 +1221,7 @@ function getHTML() {
 '<div class="stat-card"><div class="stat-label">Seen/In Progress</div><div class="stat-val c-amber" id="e-pr">0</div></div>\n' +
 '<div class="stat-card"><div class="stat-label">Resolved/Closed</div><div class="stat-val c-green" id="e-rs">0</div></div>\n' +
 '</div>\n' +
-'<div class="sect-title">Meri Tickets</div>\n' +
+'<div class="sect-title">My Tickets</div>\n' +
 '<table class="tbl"><thead><tr><th>ID</th><th>Title</th><th>Priority</th><th>Status</th><th>Date</th></tr></thead>\n' +
 '<tbody id="em-tb"></tbody></table>\n' +
 '</div>\n' +
@@ -1275,7 +1278,7 @@ function getHTML() {
 /* ── New Ticket ── */
 '<div class="vp" id="vp-new-ticket">\n' +
 '<div class="fc">\n' +
-'<div class="fg"><label>Title *</label><input type="text" id="t-ti" placeholder="Problem ka short summary..."></div>\n' +
+'<div class="fg"><label>Title *</label><input type="text" id="t-ti" placeholder="Brief summary of the issue..."></div>\n' +
 '<div class="g2">\n' +
 '<div class="fg"><label>Department *</label>\n' +
 '<select id="t-dp" onchange="loadCats()">\n' +
@@ -1291,7 +1294,7 @@ function getHTML() {
 '<div class="po-opt" onclick="selPri(\'High\')">High</div>\n' +
 '<div class="po-opt" onclick="selPri(\'Critical\')">Critical</div>\n' +
 '</div></div>\n' +
-'<div class="fg"><label>Description *</label><textarea id="t-ds" placeholder="Detail mein likho — kya ho raha hai, kab se?"></textarea></div>\n' +
+'<div class="fg"><label>Description *</label><textarea id="t-ds" placeholder="Describe the issue in detail — what happened and when did it start?"></textarea></div>\n' +
 '<div class="g2">\n' +
 '<div class="fg"><label>Attachment (Optional)</label><input type="file" id="t-file" accept="image/*,.pdf,.doc,.docx" style="padding:7px"></div>\n' +
 '<div class="fg"><label>Due Date</label><input type="date" id="t-du"></div>\n' +
@@ -1382,7 +1385,7 @@ function getHTML() {
 '  var loginNote = document.createElement("div");\n' +
 '  loginNote.id = "emp-login-note";\n' +
 '  loginNote.style.cssText = "margin-top:14px;padding:12px 14px;border:1px solid rgba(59,130,246,.25);border-radius:12px;background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(15,23,42,.35));color:#dbeafe;font-size:12px;line-height:1.6";\n' +
-'  loginNote.innerHTML = "<div style=\'font-weight:700;margin-bottom:4px;color:#fff\'>Employee Access</div><div>Employee Code aur password se login karein.</div><div>Ticket updates automatically detected email par milenge.</div>";\n' +
+'  loginNote.innerHTML = "<div style=\'font-weight:700;margin-bottom:4px;color:#fff\'>Welcome!</div><div> Sign in to Employee Access using your Employee Code and password.</div><div>Ticket updates will be sent automatically to your registered email.</div>";\n' +
 '  empForm.appendChild(loginNote);\n' +
 '}\n' +
 'if (!document.getElementById("emp-polish-style")) {\n' +
@@ -1582,7 +1585,7 @@ function getHTML() {
 '  document.querySelectorAll(".ni").forEach(function(el) { el.classList.remove("on"); });\n' +
 '  var el = document.getElementById("vp-" + v);\n' +
 '  if (el) el.classList.add("on");\n' +
-'  var titles = { it: "Tickets Dashboard", emp: "Mera Dashboard", master: "Super Admin", "new-ticket": "New Ticket Ticket", detail: "Ticket Detail" };\n' +
+'  var titles = { it: "Tickets Dashboard", emp: "Dashboard", master: "Super Admin", "new-ticket": "New Ticket Ticket", detail: "Ticket Detail" };\n' +
 '  document.getElementById("pg-ttl").textContent = titles[v] || "";\n' +
 '  document.querySelectorAll(".ni").forEach(function(ni) {\n' +
 '    if (ni.getAttribute("data-view") === v) ni.classList.add("on");\n' +
@@ -1739,7 +1742,7 @@ function getHTML() {
 '    var tNm = (t.by || "").toLowerCase();\n' +
 '    return (eEm && tEm === eEm) || (!tEm && tNm === eNm);\n' +
 '  });\n' +
-'  document.getElementById("wc-nm").textContent = "Namaste, " + cu.name + "! 👋";\n' +
+'  document.getElementById("wc-nm").textContent = "Welcome back, " + cu.name + "! 👋";\n' +
 '  document.getElementById("e-tt").textContent = mine.length;\n' +
 '  document.getElementById("e-op").textContent = mine.filter(function(t) { return t.status === "Open"; }).length;\n' +
 '  document.getElementById("e-pr").textContent = mine.filter(function(t) { return t.status === "Seen" || t.status === "In Progress"; }).length;\n' +
@@ -1879,7 +1882,7 @@ function getHTML() {
 '  allowedRoutes.forEach(function(d) {\n' +
 '     dpSel.innerHTML += "<option>" + d + "</option>";\n' +
 '  });\n' +
-'  document.getElementById("t-ct").innerHTML = "<option value=\'\'>Pehle dept select karo</option>";\n' +
+'  document.getElementById("t-ct").innerHTML = "<option value=\'\'>Select a department first</option>";\n' +
 '  selPri("Low");\n' +
 '}\n' +
 
