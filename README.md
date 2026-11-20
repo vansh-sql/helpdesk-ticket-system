@@ -13,7 +13,7 @@ The project is actively maintained as a practical learning and development proje
 
 ## Live Demo
 
-🔗 [Try it here](https://script.google.com/macros/s/AKfycbyO4XpFs_w14XdM6XXJCWJWGRNWvUyqX7DC29MAlfUht1G-pZHRXLc7-tugiyNfsn91/exec)
+🔗 [Try it here](https://script.google.com/macros/s/AKfycbzjBoFP53W3wzt9SlLv4AMQjbiv2l6IfR-PtDTzvG4NJE5CdiTlObVJeyD6E-hzLP9R0Q/exec)
 
 **Demo login:**
 - Employee Code: `Vansh-14`
